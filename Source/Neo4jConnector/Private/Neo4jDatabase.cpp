@@ -9,12 +9,14 @@
 
 void UNeo4jDatabase::InitializeDatabase(FString IP, FString HTTPport, FString user, FString pass)
 {
-	URL = "http://" + IP + ":" + HTTPport + "/db/neo4j/tx";
+	if(db == "")
+		URL = "http://" + IP + ":" + HTTPport + "/db/neo4j/tx";
+	else
+		URL = "http://" + IP + ":" + HTTPport + "/db/" + db + "/tx";
 
 
 	b64Auth = FBase64::Encode(user.Append(":").Append(pass));
 	b64Auth = "Basic " + b64Auth;
-
 }
 
 
