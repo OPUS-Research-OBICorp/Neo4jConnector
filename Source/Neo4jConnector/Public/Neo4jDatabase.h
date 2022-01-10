@@ -93,7 +93,7 @@ public:
 	void QueryStrings(TArray<FString> inStrings, TSharedRef<IHttpRequest, ESPMode::ThreadSafe> HttpRequest);
 
 	UFUNCTION(BlueprintCallable, Category = "Neo4j")
-		void InitializeDatabase(FString IP, FString HTTPport, FString user, FString pass);
+		void InitializeDatabase(FString IP, FString HTTPport, FString user, FString pass,FString database);
 
 	UFUNCTION(BlueprintCallable, Category = "Neo4j", meta = (Tooltip = "Posts array of strings as seperate queries"))
 		void QueryStrings(TArray<FString> queries);
